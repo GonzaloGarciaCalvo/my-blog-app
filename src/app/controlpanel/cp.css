@@ -1,0 +1,17 @@
+label {
+  display:inline-block;
+  width: 25%;
+}
+div input {
+  width:75%
+}
+
+.imgContainer {
+  width:30%;
+  height:150px;
+  background-color: white
+}
+.imgAvatar {
+  width:150px;
+  height:150px
+}
