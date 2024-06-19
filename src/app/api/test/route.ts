@@ -1,4 +1,4 @@
-import { prisma } from "@/app/libs/prisma"
+//import { prisma } from "@/app/libs/prisma"
 import { uploadImage } from "@/app/libs/uploadImage"
 import { NextResponse } from "next/server"
 

@@ -13,3 +13,5 @@ Next js app
 - Como admin quiero eliminar un post
 - Como admin quiero dar permiso de edicion a un colaborador
 - Como admin quiero quitar permiso de edicion a un olaborador
+
+# NOTA: fallo en deploy de vercel. problema con Prisma
