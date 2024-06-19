@@ -36,7 +36,7 @@ export const uploadImage = async (image:File| null) => {
       }) 
       .end(buffer)
     });
-    console.log("response:: ", response)
+    //console.log("response:: ", response)
     return response
 
 };

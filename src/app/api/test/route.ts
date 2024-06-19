@@ -10,12 +10,15 @@ export async function POST(request:Request) {
     //console.log("post en server: ", post)
     const image = formData.get("image") as File
     const title = formData.get("title")
-    console.log("formData en server: ", formData)
+    //console.log("formData en server: ", formData)
     const url = formData.get("url")
     //console.log(url)
-    console.log("image en back: ", image)
+    //console.log("image en back: ", image)
+    console.log("SECRET: ", process.env.API_SECRET)
+    let response
     if (image instanceof File) {
-      uploadImage(image)
+      response = await uploadImage(image)
+        
     } 
       
     
@@ -36,7 +39,7 @@ export async function POST(request:Request) {
     }) */
     //console.log("newPost en POST: ", newTask)
     //return NextResponse.json("LLEGO EL POST")
-    return NextResponse.json("LLEGO EL POST")
+    return NextResponse.json(`LLEGO EL POST:  ${response}`)
   } catch(error:any) {
     console.log("ERROR: ", error)
     return NextResponse.json(
