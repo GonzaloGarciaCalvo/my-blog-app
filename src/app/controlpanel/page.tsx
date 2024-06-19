@@ -106,8 +106,9 @@ export default function ControlPanel() {
     //console.log("post: ", post)
     console.log("fomrData: ", formData)
     //console.log("dataquery: ", dataQuery)
+    const BASE_URL = "https://my-blog-app-seven-azure.vercel.app"
     const newPost = () => {
-      fetch(`${process.env.BASE_URL}/api/test`, {
+      fetch(`${BASE_URL}/api/test`, {
         method:"POST",
         /* headers: {
           'content-type': 'multipart/form-data'
@@ -117,7 +118,7 @@ export default function ControlPanel() {
       })
       .then(res => res.json())
       .then(data => console.log("data:", data))
-      .catch(error => console.log(error))
+      .catch(error => console.log("ERROR in FRONT: ",error))
     }
     newPost()
   }
