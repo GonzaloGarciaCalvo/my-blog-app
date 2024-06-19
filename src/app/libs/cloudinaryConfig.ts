@@ -1,14 +1,14 @@
-import { v2 as cloudinary } from 'cloudinary';
+//import { v2 as cloudinary } from 'cloudinary';
 
 
 
     // Configuration
-    export const cloudinaryConfig =  { 
-        cloud_name: process.env.CLOUD_NAME, 
-        api_key: process.env.CLOUDIRARY_API_KEY, 
-        api_secret: process.env. CLOUDINARY_API_SECRET,// Click 'View Credentials' below to copy your API secret
-        secure: true
-      };
+    // export const cloudinaryConfig =  { 
+    //     cloud_name: process.env.CLOUD_NAME, 
+    //     api_key: process.env.CLOUDIRARY_API_KEY, 
+    //     api_secret: process.env. CLOUDINARY_API_SECRET,// Click 'View Credentials' below to copy your API secret
+    //     secure: true
+    //   };
     
     // // Upload an image
     //  const uploadResult = await cloudinary.uploader

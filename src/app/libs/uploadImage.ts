@@ -12,24 +12,31 @@ export const cloudinaryConfig =  {
   secure: true
 };
 cloudinary.config(cloudinaryConfig);
-console.log("config: ", cloudinary.config())
-export const uploadImage = async (imagePath:string | null | undefined) => {
+//console.log("config: ", cloudinary.config())
+export const uploadImage = async (image:File| null) => {
 
   // Use the uploaded file's name as the asset's public ID and 
   // allow overwriting the asset with new versions
-  if( !imagePath) {return "error"}
+  if( !image) {return "error"}
+
+  const bytes = await image.arrayBuffer()
+  const buffer = Buffer.from(bytes)
+
   const options = {
     use_filename: true,
     unique_filename: false,
     overwrite: true,
   };
-
-  try {
     // Upload the image
-    const result = await cloudinary.uploader.upload(imagePath, options);
-    console.log(result);
-    return result.public_id;
-  } catch (error) {
-    console.error(error);
-  }
+    const response = await new Promise((res, rej) => {
+      cloudinary.uploader.
+        upload_stream({}, (error, result) => {
+        if (error) rej(error)
+        res(result)
+      }) 
+      .end(buffer)
+    });
+    console.log("response:: ", response)
+    return response
+
 };

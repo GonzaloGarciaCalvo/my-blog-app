@@ -8,13 +8,16 @@ export async function POST(request:Request) {
     //const {title, description, image, video} = await request.json()
     const formData = await request.formData()
     //console.log("post en server: ", post)
-    const image = formData.get("file")
+    const image = formData.get("image") as File
     const title = formData.get("title")
     console.log("formData en server: ", formData)
     const url = formData.get("url")
-    console.log(url)
-
-    if (url !==null && url !== undefined) uploadImage(url)
+    //console.log(url)
+    console.log("image en back: ", image)
+    if (image instanceof File) {
+      uploadImage(image)
+    } 
+      
     
     //const {title,subTitle1,requirements1} = post
     //console.log("title: ", title, subTitle1, requirements1 ," formData: ", formData)

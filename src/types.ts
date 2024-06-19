@@ -21,3 +21,5 @@ export type inputProp ={
   handleChange: (event:ChangeEvent<HTMLInputElement>)=>void
   title: string
 }
+
+declare module "*.jpg";
