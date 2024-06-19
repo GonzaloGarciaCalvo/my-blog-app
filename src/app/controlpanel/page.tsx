@@ -35,7 +35,7 @@ export default function ControlPanel() {
   useEffect( () => {
     if (typeof image === "object" ) {
       try {
-        console.log("TRUE")
+        //console.log("TRUE")
         let imgURL = URL?.createObjectURL(image) ?? ""
         setUrl(imgURL)
       } catch (error:any) {
@@ -57,10 +57,10 @@ export default function ControlPanel() {
       const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
         event.preventDefault() 
       const name = event?.target?.name
-      console.log("name: ", name)
+      //console.log("name: ", name)
       
       if (name === "title" || name === "subTitle1" || name === "subTitle2") {
-        console.log("en IF")
+        //console.log("en IF")
         setPost({...post, [name]:event.target.value})
       } /* else setPost({...post, [name]:[...post[name], event.target.value]}) */
     }
@@ -103,11 +103,11 @@ export default function ControlPanel() {
       post, 
       formData
     } */
-    console.log("post: ", post)
+    //console.log("post: ", post)
     console.log("fomrData: ", formData)
     //console.log("dataquery: ", dataQuery)
     const newPost = () => {
-      fetch("http://localhost:3000/api/test", {
+      fetch(`${process.env.BASE_URL}/api/test`, {
         method:"POST",
         /* headers: {
           'content-type': 'multipart/form-data'
