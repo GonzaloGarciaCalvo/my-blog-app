@@ -14,7 +14,7 @@ export async function POST(request:Request) {
     const url = formData.get("url")
     //console.log(url)
     //console.log("image en back: ", image)
-    console.log("SECRET: ", process.env.API_SECRET)
+    console.log("SECRET: ", process.env.NEXT_PUBLIC_API_SECRET)
     let response
     if (image instanceof File) {
       response = await uploadImage(image)
