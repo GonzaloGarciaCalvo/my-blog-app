@@ -3,6 +3,8 @@ import { v2 as cloudinary } from 'cloudinary';
 //import { cloudinaryConfig } from "@/app/libs/cloudinaryConfig";
 
 
+console.log("NEXT_PUBLIC_CLOUDIRARY_API_KEY: ", process.env.NEXT_PUBLIC_CLOUDIRARY_API_KEY)
+console.log("NEXT_PUBLIC_CLOUDIRARY_API_SECRET: ", process.env.NEXT_PUBLIC_CLOUDIRARY_API_SECRET)
 
 // Configuration
 export const cloudinaryConfig =  { 
