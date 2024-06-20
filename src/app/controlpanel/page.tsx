@@ -128,7 +128,7 @@ export default function ControlPanel() {
         <NavBarAuth />
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <h1>Prueba</h1>
+        <h1>Prueba Cloudinary</h1>
           <form 
             className="flex flex-col justify-center bg-slate-800 gap-2 w-full"
             onSubmit={(e) => handleSubmit(e)}  
